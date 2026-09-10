@@ -31,7 +31,7 @@ resource "google_storage_bucket" "lake" {
 # safe to change, rename, and replace in front of a room.
 resource "google_storage_bucket" "scratch" {
   name                        = "${var.project_id}-cicd-scratch"
-  location                    = var.region
+  location                    = "us-central1"
   uniform_bucket_level_access = true
   public_access_prevention    = "enforced"
   force_destroy               = true
