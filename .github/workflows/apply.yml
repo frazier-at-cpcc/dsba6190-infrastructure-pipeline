@@ -75,7 +75,7 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Save the plan for the apply job
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7.0.1
         with:
           name: tfplan-${{ github.sha }}
           path: tfplan
@@ -107,7 +107,7 @@ jobs:
           -backend-config="prefix=${{ vars.TF_STATE_PREFIX }}"
 
       - name: Fetch the approved plan
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8.0.1
         with:
           name: tfplan-${{ github.sha }}
 
